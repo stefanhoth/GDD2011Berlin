@@ -10,11 +10,9 @@
 		<script type='text/javascript'>
 				var GDD2011BERLIN_VERSION = "20110920_1";
 		</script>
-		<script type='text/javascript' src='./js/jquery.min.js'></script>
-		<script type='text/javascript' src='./js/flickr.js'></script>
 	</head>
 	
-	<body>
+	<body class='cbase'>
 		<a name='top'></a>
 		
 		<div id='gdd2011-headArea'>
@@ -30,7 +28,7 @@
 						<li><a href='schedule.html'>Schedule</a></li>
 						<li><a href='location.html'>Location</a></li>
 						<li><a href='sponsors.html'>Sponsors</a></li>
-						<li><a href='behind.html'>Behind</a></li>
+						<!--<li><a href='behind.html'>Behind</a></li>-->
 					</ul>
 				</div>
 				<div class='clearer'></div>
@@ -43,11 +41,30 @@
 		
 		<div id='gdd2011-page'>
 			
-			<div id='gdd2011-contentArea'>
-				<h2>behind the scene</h2>
-				<p class='spacer'></p>
-				<div id='gdd2011-flickr-photos'></div>
+			<div id='gdd2011-contentArea' class='cbase'>
+				
+				<h2>Location</h2>
+				<div id='gdd2011-cbase-location'>
+					<p>
+						c-base Raumstation<br />
+						Rungestra&szlig;e 20<br />
+						10379 Berlin<br /><br />
+						<a class='righticon' href='http://maps.google.de/maps?q=c-base+Jannowitzbr%C3%BCcke,+Rungestra%C3%9Fe+20,+10179+Berlin&hl=de&ie=UTF8&sll=51.151786,10.415039&sspn=19.064794,53.569336&vpsrc=0&t=h&z=16'>Google Maps</a>
+					</p>
+				</div>
+				
+				<div id='gdd2011-cbase-content'>
+					<h2>c-base Raumstation</h2>
+					<p>
+						c-base e. V. is a non-profit association of about 300 members located in Berlin, Germany. The purpose of this association is to increase 
+						knowledge and skills pertaining to computer software, hardware and data networks. The association is engaged in numerous related activities.
+						<br /><br />
+						<a href='http://c-base.org'>c-base.org</a>
+					</p>
+				</div>
+				
 			</div>
+			
 			
 		</div>
 		
@@ -65,6 +82,16 @@
 			</div>
 			
 		</div>
+		
+		<script type='text/javascript'>
+			(function() {
+				var gdd2011berlin = document.createElement('script'); 
+				gdd2011berlin.type = 'text/javascript';
+				gdd2011berlin.async = true;
+				gdd2011berlin.src = './js/all.min.'+GDD2011BERLIN_VERSION+'.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gdd2011berlin, s);
+			})();
+		</script>
 		<script type='text/javascript'>
 			(function() {
 				var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
