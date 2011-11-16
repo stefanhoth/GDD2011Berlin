@@ -216,6 +216,7 @@ strong {
 	color:#6F5726;
 	font-size:14px;
 	line-height:20px;
+	margin-bottom: 20px;
 }
 
 p.spacer {
@@ -282,6 +283,19 @@ p.spacer {
 	margin-left:360px;
 }
 
+#gdd2011-contentArea .gdd2011-page-sponsors-box-left a,
+#gdd2011-contentArea .gdd2011-page-sponsors-box-right h2 a{
+	background-image: none;
+	padding: 0;
+	color: #3D351A;
+	display: inline;
+}
+
+#gdd2011-contentArea .gdd2011-page-sponsors-box-right a,
+#gdd2011-contentArea .gdd2011-schedule-day a{
+	display: inline;
+}
+
 #gdd2011-cbase-location {
 	margin:70px 0 0 0;
 }
@@ -321,10 +335,16 @@ p.spacer {
 	width:120px;
 }
 
+.gdd2011-page-schedule-full {
+	float:left;
+	width: 575px;
+}
+
 .gdd2011-page-schedule-cbase {
 	float:left;
 	width:335px;
 }
+
 
 .gdd2011-page-schedule-spacer {
 	float:left;
@@ -342,6 +362,14 @@ p.spacer {
 	display:none;
 }
 
+.gdd2011-schedule-day{
+	max-width: 700px;
+}
+
+	.gdd2011-schedule-day img.teaser{
+		float: right;
+		margin: 0 0 20px 20px;
+	}
 
 
 /* == CANVAS == */
