@@ -331,6 +331,7 @@ p.spacer {
 }
 
 .gdd2011-page-schedule-time {
+	clear: both;
 	float:left;
 	width:120px;
 }
