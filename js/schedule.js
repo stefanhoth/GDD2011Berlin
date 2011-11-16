@@ -1,12 +1,15 @@
 jQuery(document).ready(function() {
 	
-	var oi = null;
 	var dc = null;
 	var t = false;
 	
 	jQuery('#gdd2011-dateArea img').hover(
 		function() {
-			oi = jQuery(this).attr('src');
+			
+			if(jQuery(this).attr('data-original') == undefined ){
+				jQuery(this).attr('data-original', jQuery(this).attr('src'));
+			}
+			oi = jQuery(this).attr('data-original');
 			var p = oi.split('/');
 			var i = p[4];
 			var is = i.split('_');
@@ -17,7 +20,7 @@ jQuery(document).ready(function() {
 		},
 		function() {
 			if (dc != jQuery(this).attr('id')) {
-				jQuery(this).attr('src', oi);
+				jQuery(this).attr('src', jQuery(this).attr('data-original'));
 			}
 		}
 	);
