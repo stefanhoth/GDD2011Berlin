@@ -707,23 +707,28 @@ Gdd2011Berlin.prototype.draw = function() {
 
 
 var canvas = document.getElementById('surface');
-var ctx = canvas.getContext('2d');
+var ctx = (canvas != null) ? canvas.getContext('2d') : null;	
 var game = new Gdd2011Berlin();
 var ASSET_MANAGER = new AssetManager();
 
-ASSET_MANAGER.queueDownload(ASSETS_IMAGE.gear_1);
-ASSET_MANAGER.queueDownload(ASSETS_IMAGE.gear_2);
-ASSET_MANAGER.queueDownload(ASSETS_IMAGE.gear_3);
-ASSET_MANAGER.queueDownload(ASSETS_IMAGE.gear_4);
-ASSET_MANAGER.queueDownload(ASSETS_IMAGE.arrow);
-ASSET_MANAGER.queueDownload(ASSETS_IMAGE.gtuglogo);
-ASSET_MANAGER.queueDownload(ASSETS_IMAGE.cloud_1);
-ASSET_MANAGER.queueDownload(ASSETS_IMAGE.cloud_2);
-ASSET_MANAGER.queueDownload(ASSETS_IMAGE.cloud_3);
-ASSET_MANAGER.queueDownload(ASSETS_IMAGE.smoke);
+//only needed if we have a canvas to do stuff with
+if(ctx != null){
+	
+	ASSET_MANAGER.queueDownload(ASSETS_IMAGE.gear_1);
+	ASSET_MANAGER.queueDownload(ASSETS_IMAGE.gear_2);
+	ASSET_MANAGER.queueDownload(ASSETS_IMAGE.gear_3);
+	ASSET_MANAGER.queueDownload(ASSETS_IMAGE.gear_4);
+	ASSET_MANAGER.queueDownload(ASSETS_IMAGE.arrow);
+	ASSET_MANAGER.queueDownload(ASSETS_IMAGE.gtuglogo);
+	ASSET_MANAGER.queueDownload(ASSETS_IMAGE.cloud_1);
+	ASSET_MANAGER.queueDownload(ASSETS_IMAGE.cloud_2);
+	ASSET_MANAGER.queueDownload(ASSETS_IMAGE.cloud_3);
+	ASSET_MANAGER.queueDownload(ASSETS_IMAGE.smoke);
+	
+	ASSET_MANAGER.downloadAll(function() {
+	    game.init(ctx);
+		game.createOverlay();
+	    game.start();
+	});
 
-ASSET_MANAGER.downloadAll(function() {
-    game.init(ctx);
-	game.createOverlay();
-    game.start();
-});
+}
